@@ -1,1 +1,23 @@
+#Pull Jenkins Docker Image
+docker pull jenkins/jenkins:lts
+------------------------------------------------------------------------------------------------------------------------------
+#Create a Jenkins Container
+docker run -d \
+  --name jenkins \                             #Names the container
+  -p 8080:8080 -p 50000:50000 \                #aps Jenkins UI to your host's port 8080 and 50000 port for For Jenkins agents
+  -v jenkins_home:/var/jenkins_home \          #Stores Jenkins data permanently         
+  jenkins/jenkins:lts
+------------------------------------------------------------------------------------------------------------------------------
+#Open Jenkins in your browser
+http://localhost:8080                          #if you are using pysicall server
+http://<your_vm_ip>:8080                       #if you are using Virtual Server
+------------------------------------------------------------------------------------------------------------------------------
+#Get the Initial Admin Password
+docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+
+#Complete Jenkins Setup in Browser using this Steps!
+Paste the password in the browser.
+Click "Install suggested plugins"
+Create your admin user
+Jenkins dashboard will appear!
 
