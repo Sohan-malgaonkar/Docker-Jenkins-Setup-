@@ -1,0 +1,15 @@
+sudo apt update                       # Updates the package list
+sudo apt install docker.io -y         # Installs Docker Engine
+sudo systemctl start docker           # Starts the Docker service
+sudo systemctl enable docker          # Enables Docker to start on boot
+
+#-----------------------------------------------------------------------------
+
+docker --version                      #check version of Docker
+Docker version 24.x.x, build xxxxx    #will show output something like this
+
+#-----------------------------------------------------------------------------
+
+docker run Hey, Sohan Docker is working fine  #Test Docker Working
+systemctl status docker                       #will show output as running all services
+
